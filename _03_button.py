@@ -8,7 +8,8 @@ a = 1
 
 
 def handle_button_click():
-    global a  # accessing the global variable `a`, cause even functions are class in the background of python, {yeah python gets weird sometimes cause if we are only reading the value that's okay but when we try to assign the value it creates it's own local variable so instead of updating value it initialize the variable and perform assingment operation, that's why I think having a keyword indicating the initialization operation is being performed is good in a programming language like JavaScript(best language BTW)}
+    # accessing the global variable `a`, cause even functions are class in the background of python, {yeah python gets weird sometimes cause if we are only reading the value that's okay but when we try to assign the value it creates it's own local variable so instead of updating value it initialize the variable and perform assingment operation, that's why I think having a keyword indicating the initialization operation is being performed is good in a programming language like JavaScript(best language BTW)}
+    global a
     print(f"button clicked {a}")
     a = a + 1
 
@@ -23,7 +24,8 @@ new_button = tk.Button(frame)
 new_button.pack()
 new_button.config(
     text="click me",
-    command=handle_button_click,  # here we didn't call the method by using paranthesis we just simply made the command function same as handle_button_click function cause if we did something like `command = handle_button_click()` then we would have assinged the return value fo handle_button_click to the command function
+    command=handle_button_click,  # This is same as adding a ActionListener
+    # here we didn't call the method by using paranthesis we just simply made the command function same as handle_button_click function cause if we did something like `command = handle_button_click()` then we would have assinged the return value fo handle_button_click to the command function
     # this phenomenon is known as `callback`
     font=("comic sans MS", 30, "underline"),
     background="steelblue",
